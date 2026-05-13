@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Presupuesto – CDI Te Impulsa 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+:root {
+  --gd: #3aaa35; --gm: #6cc04a; --gl: #b5e550;
+  --red: #e8273a; --amb: #f9a825; --blu: #1565c0;
+  --blk: #111111; --wht: #ffffff;
+  --g100: #f4f6f3; --g200: #e6ebe4; --g400: #9bac97; --g600: #5a6b57;
+  --shadow: 0 4px 28px rgba(58,170,53,.16);
+  --r: 14px; --rsm: 8px;
+  --fh: 'Nunito', sans-serif; --fb: 'Nunito Sans', sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fb);background:linear-gradient(145deg,#d8f5a2 0%,#a8e063 40%,#6cc04a 100%);min-height:100vh;color:var(--blk)}
+
+@media print{body{background:white!important}.no-print{display:none!important}.card{box-shadow:none!important;border:1px solid #ccc!important}}
+
+.page-wrap{max-width:1180px;margin:0 auto;padding:24px 14px 56px}
+
+/* HEADER */
+.hband{background:var(--blk);border-radius:var(--r) var(--r) 0 0;padding:26px 32px 22px;display:flex;align-items:center;gap:20px;position:relative;overflow:hidden}
+.hband::before{content:'';position:absolute;top:-40px;right:-40px;width:200px;height:200px;border-radius:50%;background:var(--gm);opacity:.14}
+.hband::after{content:'';position:absolute;bottom:-60px;left:30%;width:260px;height:260px;border-radius:50%;background:var(--gl);opacity:.09}
+.logo-b{background:linear-gradient(135deg,var(--gm),var(--gl));border-radius:12px;padding:11px 15px;flex-shrink:0;z-index:1}
+.logo-b .l1{font-family:var(--fh);font-weight:900;font-size:1.2rem;color:var(--blk);line-height:1}
+.logo-b .l2{font-family:var(--fh);font-weight:900;font-size:1.45rem;color:var(--blk);line-height:1.05;font-style:italic}
+.logo-b .l3{font-family:var(--fh);font-weight:900;font-size:1.35rem;color:var(--blk);line-height:1}
+.htxt{z-index:1}
+.htxt h1{font-family:var(--fh);font-weight:900;font-size:clamp(1.1rem,2.7vw,1.85rem);color:var(--wht);line-height:1.2}
+.htxt h1 span{color:var(--gl)}
+.htxt p{margin-top:4px;font-size:.86rem;color:var(--g400);font-weight:600}
+.badge-ll{display:inline-block;margin-top:8px;background:var(--red);color:var(--wht);font-family:var(--fh);font-weight:800;font-size:.8rem;padding:4px 13px;border-radius:99px;letter-spacing:.04em}
+
+/* CARD */
+.card{background:var(--wht);border-radius:0 0 var(--r) var(--r);box-shadow:var(--shadow);padding:26px 24px}
+
+/* SECTION HEAD */
+.sec-hd{display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.sec-ico{width:32px;height:32px;border-radius:7px;background:var(--gd);display:flex;align-items:center;justify-content:center;font-size:.95rem;flex-shrink:0}
+.sec-hd h2{font-family:var(--fh);font-weight:900;font-size:1rem;color:var(--blk)}
+.divider{border:none;border-top:2px solid var(--g200);margin:24px 0}
+
+/* INSTRUCTIONS */
+.instr{background:var(--g100);border-left:5px solid var(--gd);border-radius:var(--rsm);padding:14px 17px;margin-bottom:22px;font-size:.865rem;line-height:1.72;color:var(--g600)}
+.instr strong{color:var(--blk)}
+.instr ul{padding-left:17px;margin-top:6px}
+.instr li{margin-bottom:3px}
+
+/* ID FIELDS */
+.id-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:13px;margin-bottom:8px}
+.fw{display:flex;flex-direction:column;gap:4px}
+.fw label{font-size:.78rem;font-weight:700;color:var(--g600);text-transform:uppercase;letter-spacing:.05em}
+.fw label span{color:var(--red)}
+.fw input[type=text]{padding:9px 12px;border:2px solid var(--g200);border-radius:var(--rsm);font-family:var(--fb);font-size:.88rem;color:var(--blk);transition:border-color .15s;outline:none}
+.fw input[type=text]:focus{border-color:var(--gm);box-shadow:0 0 0 3px rgba(108,192,74,.18)}
+
+/* SUMMARY */
+.sum-wrap{margin-bottom:20px}
+.sum-ttl{font-family:var(--fh);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.07em;color:var(--g600);margin-bottom:9px}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:10px;margin-bottom:9px}
+.sc{border-radius:var(--rsm);padding:13px 15px;text-align:center;border:2px solid transparent;transition:transform .18s}
+.sc:hover{transform:translateY(-2px)}
+.sc .slbl{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px;line-height:1.3}
+.sc .sval{font-family:var(--fh);font-weight:900;font-size:1.2rem;line-height:1}
+.sc .ssub{font-size:.68rem;font-weight:600;margin-top:3px;opacity:.8}
+
+.sg-green{background:#e8f5e9;border-color:var(--gd)}.sg-green .slbl,.sg-green .sval,.sg-green .ssub{color:var(--gd)}
+.sg-amber{background:#fff8e1;border-color:var(--amb)}.sg-amber .slbl,.sg-amber .sval,.sg-amber .ssub{color:#f57f17}
+.sg-blue{background:#e3f2fd;border-color:var(--blu)}.sg-blue .slbl,.sg-blue .sval,.sg-blue .ssub{color:var(--blu)}
+.sg-red{background:#ffebee;border-color:var(--red)}.sg-red .slbl,.sg-red .sval,.sg-red .ssub{color:#b71c1c}
+.sg-purple{background:#f3e5f5;border-color:#7b1fa2}.sg-purple .slbl,.sg-purple .sval,.sg-purple .ssub{color:#6a1b9a}
+.sg-teal{background:#e0f7fa;border-color:#00838f}.sg-teal .slbl,.sg-teal .sval,.sg-teal .ssub{color:#006064}
+
+/* WARNINGS */
+.warn-area{display:flex;flex-direction:column;gap:9px;margin-bottom:18px}
+.wb{display:flex;align-items:flex-start;gap:10px;border-radius:var(--rsm);padding:12px 16px;border:2px solid}
+.wb.hidden{display:none}
+.wb.wr{background:#ffebee;border-color:var(--red)}
+.wb.wa{background:#fff8e1;border-color:var(--amb)}
+.wb.wp{background:#f3e5f5;border-color:#7b1fa2}
+.wi{font-size:1.2rem;flex-shrink:0;margin-top:1px}
+.wt{font-size:.84rem;line-height:1.6}
+.wt strong{display:block;font-size:.88rem;margin-bottom:2px}
+.wr .wt,.wr .wt strong{color:#b71c1c}
+.wa .wt,.wa .wt strong{color:#e65100}
+.wp .wt,.wp .wt strong{color:#6a1b9a}
+
+/* BUTTONS */
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:18px}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 19px;border-radius:99px;font-family:var(--fh);font-weight:800;font-size:.84rem;cursor:pointer;border:2px solid transparent;transition:all .17s;white-space:nowrap}
+.btn:active{transform:scale(.97)}
+.btn-add{background:var(--gd);color:var(--wht);border-color:var(--gd)}.btn-add:hover{background:#2d8a29;border-color:#2d8a29}
+.btn-clr{background:var(--wht);color:var(--g600);border-color:var(--g200)}.btn-clr:hover{background:var(--g100)}
+.btn-prv{background:var(--blk);color:var(--wht);border-color:var(--blk)}.btn-prv:hover{background:#333}
+.btn-pdf{background:var(--red);color:var(--wht);border-color:var(--red)}.btn-pdf:hover{background:#c0212f}
+.btn-cls{background:var(--g100);color:var(--g600);border-color:var(--g200)}.btn-cls:hover{background:var(--g200)}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:var(--rsm);box-shadow:0 1px 8px rgba(0,0,0,.07)}
+table{width:100%;border-collapse:collapse;font-size:.8rem}
+thead th{background:var(--gd);color:var(--wht);font-family:var(--fh);font-weight:800;padding:10px 7px;text-align:left;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;white-space:nowrap}
+thead th:first-child{border-radius:var(--rsm) 0 0 0}
+thead th:last-child{border-radius:0 var(--rsm) 0 0}
+tbody tr{border-bottom:1px solid var(--g200)}
+tbody tr:nth-child(even){background:var(--g100)}
+tbody tr:hover{background:#edf7ec}
+tbody td{padding:6px 5px;vertical-align:middle}
+tbody td select,tbody td input[type=text],tbody td input[type=number],tbody td input[type=date]{width:100%;padding:6px 7px;border:1.5px solid var(--g200);border-radius:5px;font-family:var(--fb);font-size:.78rem;color:var(--blk);background:var(--wht);transition:border-color .14s;outline:none}
+tbody td select:focus,tbody td input:focus{border-color:var(--gm);box-shadow:0 0 0 3px rgba(108,192,74,.14)}
+.td-total{font-family:var(--fh);font-weight:800;font-size:.85rem;color:var(--gd);text-align:right;padding-right:8px;white-space:nowrap;min-width:100px}
+.btn-del{background:none;border:none;cursor:pointer;color:var(--red);font-size:.95rem;padding:4px 6px;border-radius:5px;transition:background .14s}
+.btn-del:hover{background:#ffebee}
+.col-n{width:32px;text-align:center}
+.col-cat{min-width:185px}
+.col-desc{min-width:170px}
+.col-cant{width:68px}
+.col-vu{width:105px}
+.col-vt{width:105px}
+.col-fecha{width:125px}
+.col-obs{min-width:140px}
+.col-del{width:40px;text-align:center}
+tbody .col-n{text-align:center;color:var(--g400);font-weight:700;font-size:.73rem}
+.erow td{text-align:center;padding:28px;color:var(--g400);font-style:italic;font-size:.88rem}
+
+/* MODAL */
+.moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:1000;align-items:flex-start;justify-content:center;padding:14px;overflow-y:auto}
+.moverlay.open{display:flex}
+.modal{background:var(--wht);border-radius:var(--r);max-width:920px;width:100%;margin:auto;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:mIn .22s ease}
+@keyframes mIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.mhdr{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:10px}
+.mttl{font-family:var(--fh);font-weight:900;font-size:1.1rem;line-height:1.3}
+.mttl span{color:var(--gd)}
+.btnx{background:none;border:none;font-size:1.35rem;cursor:pointer;color:var(--g400);line-height:1;flex-shrink:0}
+.btnx:hover{color:var(--red)}
+
+/* Preview ID */
+.pid{background:var(--g100);border-radius:var(--rsm);padding:11px 15px;margin-bottom:13px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:7px}
+.pid-item{font-size:.8rem}.pid-item strong{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--g400);margin-bottom:1px}
+.pmeta{display:flex;flex-wrap:wrap;gap:5px 16px;font-size:.78rem;margin-bottom:13px;color:var(--g600)}
+.pmeta strong{color:var(--blk)}
+
+/* Preview table */
+.ptbl{width:100%;border-collapse:collapse;font-size:.74rem}
+.ptbl th{background:var(--gd);color:var(--wht);font-family:var(--fh);font-weight:800;padding:7px 5px;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.04em}
+.ptbl td{padding:6px 5px;border-bottom:1px solid var(--g200)}
+.ptbl tr:nth-child(even) td{background:var(--g100)}
+.ptbl .trow td{font-family:var(--fh);font-weight:900;background:#e8f5e9!important}
+
+/* Preview summary cards */
+.psg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px;margin:13px 0}
+.psc{border:1.5px solid;border-radius:6px;padding:9px 11px;text-align:center}
+.psc .plbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px;line-height:1.3}
+.psc .pval{font-family:var(--fh);font-weight:900;font-size:1.05rem;line-height:1}
+.psc .psub{font-size:.62rem;font-weight:600;margin-top:2px;opacity:.85}
+.pcg{border-color:var(--gd)}.pcg .plbl,.pcg .pval,.pcg .psub{color:var(--gd)}
+.pca{border-color:var(--amb)}.pca .plbl,.pca .pval,.pca .psub{color:#f57f17}
+.pcb{border-color:var(--blu)}.pcb .plbl,.pcb .pval,.pcb .psub{color:var(--blu)}
+.pcr{border-color:var(--red)}.pcr .plbl,.pcr .pval,.pcr .psub{color:#b71c1c}
+.pcp{border-color:#7b1fa2}.pcp .plbl,.pcp .pval,.pcp .psub{color:#6a1b9a}
+.pct{border-color:#00838f}.pct .plbl,.pct .pval,.pct .psub{color:#006064}
+
+/* Preview rules */
+.prules{display:flex;flex-direction:column;gap:7px;margin-top:11px}
+.prule{border-radius:var(--rsm);padding:9px 13px;font-size:.78rem;border:1.5px solid;line-height:1.5}
+.prule.ok{background:#e8f5e9;border-color:var(--gd);color:#2e7d32}
+.prule.warn{background:#fff8e1;border-color:var(--amb);color:#e65100}
+.prule.err{background:#ffebee;border-color:var(--red);color:#b71c1c}
+.prule strong{font-family:var(--fh);font-weight:800;display:block;margin-bottom:1px}
+
+/* Preview note */
+.pnote{background:#f3e5f5;border:1.5px solid #7b1fa2;border-radius:var(--rsm);padding:10px 14px;font-size:.76rem;color:#4a148c;margin-top:11px;line-height:1.65}
+.pnote strong{font-family:var(--fh);font-weight:800;display:block;margin-bottom:2px}
+
+.mfoot{margin-top:16px;display:flex;gap:9px;justify-content:flex-end;flex-wrap:wrap}
+
+.pfooter{text-align:center;margin-top:22px;font-size:.73rem;color:var(--g600);font-weight:600;opacity:.85}
+
+@media(max-width:640px){.hband{flex-direction:column;align-items:flex-start}.card{padding:16px 12px}.btn{font-size:.77rem;padding:8px 13px}.sg{grid-template-columns:1fr 1fr}.modal{padding:16px 12px}}
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+<!-- HEADER -->
+<div class="hband no-print">
+  <div class="logo-b">
+    <div class="l1">CDI Te ✦</div>
+    <div class="l2">Impulsa</div>
+    <div class="l3">2026</div>
+  </div>
+  <div class="htxt">
+    <h1>Presupuesto del <span>Proyecto Social</span><br>y/o Comunitario</h1>
+    <p>Herramienta de elaboración presupuestaria</p>
+    <span class="badge-ll">★ 2do Llamado – Fondo CDI Te Impulsa 2026</span>
+  </div>
+</div>
+
+<div class="card">
+
+  <!-- INSTRUCCIONES -->
+  <div class="instr">
+    <strong>📋 Instrucciones para postulantes:</strong>
+    <ul>
+      <li>Completa los <strong>datos de identificación</strong> del proyecto en la sección de abajo.</li>
+      <li>Ingresa cada <strong>gasto necesario</strong> en la tabla, indicando categoría, descripción, cantidad, valor unitario y fecha estimada de ejecución. El valor total se calcula automáticamente.</li>
+      <li>Verifica que el total no supere los <strong>$1.000.000 CLP</strong> financiados por el fondo. Si tu presupuesto lo supera, el excedente deberá ser cubierto por la persona líder del proyecto.</li>
+      <li>Revisa el cumplimiento de las <strong>reglas del fondo</strong>: mínimo 40% en bienes tangibles y máximo 15% en alimentación no perecible.</li>
+      <li>Haz clic en <strong>👁 Previsualizar presupuesto</strong> y, desde esa vista, haz clic en <strong>⬇ Descargar PDF</strong>.</li>
+      <li>Una vez descargado el PDF, <strong>súbelo a la plataforma Formi</strong> como parte de tu postulación al fondo.</li>
+    </ul>
+  </div>
+
+  <!-- IDENTIFICACIÓN DEL PROYECTO -->
+  <div class="sec-hd">
+    <div class="sec-ico">👤</div>
+    <h2>Identificación del Proyecto</h2>
+  </div>
+  <div class="id-grid">
+    <div class="fw">
+      <label for="inp-lider">Nombre del líder o lideresa del proyecto <span>*</span></label>
+      <input type="text" id="inp-lider" placeholder="Ej: María González Pérez" autocomplete="name" />
+    </div>
+    <div class="fw">
+      <label for="inp-prj">Nombre del proyecto <span>*</span></label>
+      <input type="text" id="inp-prj" placeholder="Ej: Huerto Comunitario San Javier" />
+    </div>
+    <div class="fw">
+      <label for="inp-org">Organización, grupo o comunidad <span>*</span></label>
+      <input type="text" id="inp-org" placeholder="Ej: Junta de Vecinos N°12 La Esperanza" />
+    </div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- PANEL DE ESTADO -->
+  <div class="sum-wrap">
+    <div class="sum-ttl">📊 Estado del presupuesto en tiempo real</div>
+
+    <!-- Fila 1: montos generales -->
+    <div class="sg">
+      <div class="sc sg-green">
+        <div class="slbl">🏦 Monto máximo del fondo</div>
+        <div class="sval">$1.000.000</div>
+        <div class="ssub">CLP</div>
+      </div>
+      <div class="sc sg-amber">
+        <div class="slbl">🧾 Total presupuestado</div>
+        <div class="sval" id="l-total">$0</div>
+        <div class="ssub">CLP</div>
+      </div>
+      <div class="sc sg-blue" id="sc-saldo">
+        <div class="slbl" id="l-saldo-lbl">💰 Saldo disponible</div>
+        <div class="sval" id="l-saldo">$1.000.000</div>
+        <div class="ssub">CLP</div>
+      </div>
+      <div class="sc sg-green" id="sc-bst">
+        <div class="slbl">📋 Estado presupuesto</div>
+        <div class="sval" id="l-bst" style="font-size:.9rem">Sin gastos aún</div>
+      </div>
+    </div>
+
+    <!-- Fila 2: reglas del fondo -->
+    <div class="sg">
+      <div class="sc sg-purple">
+        <div class="slbl">📦 Total bienes tangibles</div>
+        <div class="sval" id="l-tang">$0</div>
+        <div class="ssub" id="l-tang-pct">0% del total</div>
+      </div>
+      <div class="sc sg-green" id="sc-tang-st">
+        <div class="slbl">📦 Requisito mínimo 40%</div>
+        <div class="sval" id="l-tang-st" style="font-size:.8rem">Mín. $400.000 CLP</div>
+        <div class="ssub" id="l-tang-sub">Sin datos aún</div>
+      </div>
+      <div class="sc sg-teal">
+        <div class="slbl">🥫 Total alimentación</div>
+        <div class="sval" id="l-alim">$0</div>
+        <div class="ssub" id="l-alim-pct">0% del total</div>
+      </div>
+      <div class="sc sg-green" id="sc-alim-st">
+        <div class="slbl">🥫 Límite máximo 15%</div>
+        <div class="sval" id="l-alim-st" style="font-size:.8rem">Máx. $150.000 CLP</div>
+        <div class="ssub" id="l-alim-sub">Sin datos aún</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADVERTENCIAS -->
+  <div class="warn-area">
+    <div class="wb wr hidden" id="w-budget">
+      <div class="wi">⚠️</div>
+      <div class="wt">
+        <strong>El presupuesto excede el monto máximo financiado por el fondo.</strong>
+        El total presupuestado supera el límite de $1.000.000 CLP en <strong id="w-diff"></strong> CLP. Recuerda que todo excedente deberá ser cubierto por la persona líder del proyecto.
+      </div>
+    </div>
+    <div class="wb wa hidden" id="w-tang">
+      <div class="wi">⚠️</div>
+      <div class="wt">
+        <strong>El presupuesto aún no cumple con el mínimo requerido de bienes tangibles.</strong>
+        Recuerda que al menos el 40% del monto adjudicado debe destinarse a bienes tangibles, materiales, equipamiento o recursos físicos (mínimo $400.000 CLP).
+      </div>
+    </div>
+    <div class="wb wp hidden" id="w-alim">
+      <div class="wi">⚠️</div>
+      <div class="wt">
+        <strong>El presupuesto supera el máximo permitido para alimentación no perecible.</strong>
+        Recuerda que este gasto no puede superar el 15% del monto adjudicado (máximo $150.000 CLP).
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTONES -->
+  <div class="actions no-print">
+    <button class="btn btn-add" onclick="addRow()">＋ Agregar gasto</button>
+    <button class="btn btn-clr" onclick="clearAll()">🗑 Limpiar todo</button>
+    <button class="btn btn-prv" onclick="openPreview()">👁 Previsualizar presupuesto</button>
+  </div>
+
+  <!-- TABLA -->
+  <div class="tbl-wrap">
+    <table id="bt">
+      <thead>
+        <tr>
+          <th class="col-n">#</th>
+          <th class="col-cat">Categoría del gasto</th>
+          <th class="col-desc">Descripción del gasto</th>
+          <th class="col-cant">Cantidad</th>
+          <th class="col-vu">Valor unitario ($)</th>
+          <th class="col-vt">Valor total ($)</th>
+          <th class="col-fecha">Fecha est. de ejecución</th>
+          <th class="col-obs">Observaciones</th>
+          <th class="col-del no-print"></th>
+        </tr>
+      </thead>
+      <tbody id="bb"></tbody>
+    </table>
+  </div>
+
+  <p style="margin-top:11px;font-size:.73rem;color:var(--g400);text-align:right">
+    Todos los montos en pesos chilenos (CLP). IVA incluido cuando corresponda.
+  </p>
+
+</div><!-- /card -->
+
+<div class="pfooter">
+  CDI Chile &nbsp;·&nbsp; CDI Te Impulsa 2026 &nbsp;·&nbsp; 2do Llamado &nbsp;·&nbsp; Fondo de Proyectos Sociales y/o Comunitarios
+</div>
+</div><!-- /page-wrap -->
+
+
+<!-- MODAL PREVISUALIZACIÓN -->
+<div class="moverlay" id="moverlay" onclick="ovClick(event)">
+  <div class="modal" id="modal">
+    <div class="mhdr">
+      <div class="mttl">
+        Presupuesto del Proyecto Social y/o Comunitario<br>
+        <span>2do Llamado – Fondo CDI Te Impulsa 2026</span>
+      </div>
+      <button class="btnx" onclick="closePreview()" title="Cerrar">✕</button>
+    </div>
+    <div class="pid" id="p-id"></div>
+    <div class="pmeta" id="p-meta"></div>
+    <div id="p-content"></div>
+    <div class="psg" id="p-sg"></div>
+    <div class="prules" id="p-rules"></div>
+    <div class="pnote">
+      <strong>📌 Nota importante:</strong>
+      El Fondo CDI Te Impulsa 2026 financia hasta $1.000.000 CLP por proyecto. Todo excedente por sobre este monto deberá ser cubierto por la persona líder del proyecto.
+    </div>
+    <div class="mfoot">
+      <button class="btn btn-cls" onclick="closePreview()">✕ Cerrar</button>
+      <button class="btn btn-pdf" onclick="downloadPDF()">⬇ Descargar PDF</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+/* ─── Constantes ─── */
+const MAX  = 1000000;
+const TANG = "Bienes tangibles, materiales, equipamiento o recursos físicos";
+const ALIM = "Alimentación no perecible";
+const CATS = [
+  "",
+  "Bienes tangibles, materiales, equipamiento o recursos físicos",
+  "Implementación de talleres, jornadas, encuentros formativos o actividades comunitarias",
+  "Mejoras, reparación o habilitación de espacios comunitarios",
+  "Servicios contratados con proveedores formales",
+  "Capacitaciones o actividades formativas",
+  "Alimentación no perecible",
+  "Difusión, diseño, impresiones o material gráfico",
+  "Otros gastos justificados del proyecto"
+];
+let rc = 0;
+
+/* ─── Utilidades ─── */
+const $ = id => document.getElementById(id);
+function fmt(n){ return isNaN(n)||n==null ? "$0" : "$"+Math.round(n).toLocaleString("es-CL"); }
+function pct(n,t){ return t ? Math.round((n/t)*100)+"%" : "0%"; }
+function fmtDate(v){ if(!v) return "—"; const [y,m,d]=v.split("-"); return `${d}/${m}/${y}`; }
+
+/* ─── Agregar fila ─── */
+function addRow(){
+  rc++;
+  const bb = $("bb");
+  const em = bb.querySelector(".erow"); if(em) em.remove();
+  const tr = document.createElement("tr");
+  tr.id = "r"+rc; tr.dataset.id = rc;
+  const opts = CATS.map((c,i) => i===0
+    ? `<option value="" disabled selected>— Selecciona categoría —</option>`
+    : `<option value="${c}">${c}</option>`).join("");
+  tr.innerHTML = `
+    <td class="col-n rn">${rc}</td>
+    <td class="col-cat"><select onchange="calc(${rc})" aria-label="Categoría">${opts}</select></td>
+    <td class="col-desc"><input type="text" placeholder="¿Qué se comprará o contratará?" aria-label="Descripción" /></td>
+    <td class="col-cant"><input type="number" min="0" step="1" placeholder="0" oninput="calc(${rc})" aria-label="Cantidad" /></td>
+    <td class="col-vu"><input type="number" min="0" step="1" placeholder="0" oninput="calc(${rc})" aria-label="Valor unitario" /></td>
+    <td class="col-vt td-total" id="vt${rc}">$0</td>
+    <td class="col-fecha"><input type="date" aria-label="Fecha estimada de ejecución" /></td>
+    <td class="col-obs"><input type="text" placeholder="Opcional" aria-label="Observaciones" /></td>
+    <td class="col-del no-print"><button class="btn-del" onclick="delRow(${rc})" title="Eliminar" aria-label="Eliminar fila">✕</button></td>`;
+  bb.appendChild(tr);
+  renumber(); updateSummary();
+}
+
+/* ─── Calcular fila ─── */
+function calc(id){
+  const row = $("r"+id); if(!row) return;
+  const nums = row.querySelectorAll("input[type=number]");
+  const c = parseFloat(nums[0].value)||0, u = parseFloat(nums[1].value)||0;
+  $("vt"+id).textContent = fmt(c*u);
+  updateSummary();
+}
+
+/* ─── Eliminar fila ─── */
+function delRow(id){
+  const r=$("r"+id); if(r) r.remove();
+  renumber(); updateSummary(); chkEmpty();
+}
+function renumber(){ document.querySelectorAll(".rn").forEach((el,i)=>el.textContent=i+1); }
+
+/* ─── Obtener filas ─── */
+function getRows(){
+  return [...document.querySelectorAll("#bb tr[id^=r]")].map((row,i)=>{
+    const sel   = row.querySelector("select");
+    const txt   = row.querySelectorAll("input[type=text]");
+    const num   = row.querySelectorAll("input[type=number]");
+    const dat   = row.querySelector("input[type=date]");
+    const c=parseFloat(num[0]?.value)||0, u=parseFloat(num[1]?.value)||0;
+    return { n:i+1, cat:sel?.value||"", desc:txt[0]?.value||"", obs:txt[1]?.value||"",
+             cant:c, vunit:u, vtotal:c*u, fecha:dat?.value||"" };
+  });
+}
+
+/* ─── Métricas ─── */
+function metrics(rows){
+  const total   = rows.reduce((a,r)=>a+r.vtotal,0);
+  const tangible= rows.filter(r=>r.cat===TANG).reduce((a,r)=>a+r.vtotal,0);
+  const alim    = rows.filter(r=>r.cat===ALIM).reduce((a,r)=>a+r.vtotal,0);
+  return { total, tangible, alim,
+           tangOk: tangible >= MAX*0.4,
+           alimOk: alim     <= MAX*0.15 };
+}
+
+/* ─── Actualizar panel ─── */
+function updateSummary(){
+  const rows = getRows();
+  const m    = metrics(rows);
+  const saldo= MAX - m.total;
+  const over = m.total > MAX;
+
+  $("l-total").textContent = fmt(m.total);
+
+  // Saldo / excedido
+  const ssc=$("sc-saldo"), lsl=$("l-saldo-lbl"), lsv=$("l-saldo");
+  if(over){ ssc.className="sc sg-red"; lsl.textContent="⚠ Monto excedido"; lsv.textContent=fmt(Math.abs(saldo)); }
+  else    { ssc.className="sc sg-blue"; lsl.textContent="💰 Saldo disponible"; lsv.textContent=fmt(saldo); }
+
+  // Estado presupuesto
+  const sb=$("sc-bst"), lb=$("l-bst");
+  if(m.total===0){ sb.className="sc sg-green"; lb.textContent="Sin gastos aún"; }
+  else if(over)  { sb.className="sc sg-red";   lb.textContent="Excede el límite ⚠"; }
+  else           { sb.className="sc sg-green";  lb.textContent="Dentro del límite ✓"; }
+
+  // Bienes tangibles
+  $("l-tang").textContent = fmt(m.tangible);
+  $("l-tang-pct").textContent = pct(m.tangible,m.total)+" del total";
+  const st=$("sc-tang-st"), lst=$("l-tang-sub");
+  if(m.total===0){ st.className="sc sg-green"; lst.textContent="Sin datos aún"; }
+  else if(m.tangOk){ st.className="sc sg-green"; lst.textContent="✓ Cumple el mínimo del 40%"; }
+  else             { st.className="sc sg-red";   lst.textContent="✗ No cumple el mínimo del 40%"; }
+
+  // Alimentación
+  $("l-alim").textContent = fmt(m.alim);
+  $("l-alim-pct").textContent = pct(m.alim,m.total)+" del total";
+  const sa=$("sc-alim-st"), la=$("l-alim-sub");
+  if(m.total===0){ sa.className="sc sg-green"; la.textContent="Sin datos aún"; }
+  else if(m.alimOk){ sa.className="sc sg-green"; la.textContent="✓ Dentro del máximo del 15%"; }
+  else             { sa.className="sc sg-red";   la.textContent="✗ Supera el máximo del 15%"; }
+
+  // Advertencias
+  if(over){ $("w-budget").classList.remove("hidden"); $("w-diff").textContent=Math.round(Math.abs(saldo)).toLocaleString("es-CL"); }
+  else $("w-budget").classList.add("hidden");
+  (m.total>0&&!m.tangOk)?$("w-tang").classList.remove("hidden"):$("w-tang").classList.add("hidden");
+  (m.total>0&&!m.alimOk)?$("w-alim").classList.remove("hidden"):$("w-alim").classList.add("hidden");
+}
+
+/* ─── Limpiar todo ─── */
+function clearAll(){
+  if(!confirm("¿Estás seguro/a de que deseas eliminar todos los gastos? Esta acción no se puede deshacer.")) return;
+  $("bb").innerHTML=""; rc=0; updateSummary(); showEmpty();
+}
+function showEmpty(){
+  if(!$("bb").querySelector("tr"))
+    $("bb").innerHTML=`<tr class="erow"><td colspan="9">Aún no has agregado gastos. Haz clic en <strong>＋ Agregar gasto</strong> para comenzar.</td></tr>`;
+}
+function chkEmpty(){ if(!document.querySelector("#bb tr[id^=r]")) showEmpty(); }
+
+/* ─── Previsualizar ─── */
+function openPreview(){
+  const rows = getRows();
+  const m    = metrics(rows);
+  const saldo= MAX - m.total;
+  const over = m.total > MAX;
+  const now  = new Date().toLocaleDateString("es-CL",{day:"2-digit",month:"long",year:"numeric"});
+
+  const lider = $("inp-lider").value.trim()||"—";
+  const prj   = $("inp-prj").value.trim()||"—";
+  const org   = $("inp-org").value.trim()||"—";
+
+  // ID
+  $("p-id").innerHTML=`
+    <div class="pid-item"><strong>Líder o lideresa del proyecto</strong>${lider}</div>
+    <div class="pid-item"><strong>Nombre del proyecto</strong>${prj}</div>
+    <div class="pid-item"><strong>Organización / grupo / comunidad</strong>${org}</div>`;
+
+  $("p-meta").innerHTML=`
+    <div><strong>Generado el:</strong> ${now}</div>
+    <div><strong>Ítems:</strong> ${rows.length}</div>
+    <div><strong>Fondo:</strong> CDI Te Impulsa 2026 – 2do Llamado</div>`;
+
+  // Tabla
+  let th=`<table class="ptbl"><thead><tr>
+    <th>#</th><th>Categoría</th><th>Descripción</th>
+    <th style="text-align:center">Cant.</th>
+    <th style="text-align:right">Val. Unit.</th>
+    <th style="text-align:right">Val. Total</th>
+    <th>Fecha ejec.</th><th>Observaciones</th>
+  </tr></thead><tbody>`;
+  if(!rows.length){
+    th+=`<tr><td colspan="8" style="text-align:center;padding:18px;color:#999;font-style:italic">Sin gastos ingresados.</td></tr>`;
+  } else {
+    rows.forEach(r=>{
+      th+=`<tr>
+        <td>${r.n}</td><td>${r.cat||"—"}</td><td>${r.desc||"—"}</td>
+        <td style="text-align:center">${r.cant}</td>
+        <td style="text-align:right">${fmt(r.vunit)}</td>
+        <td style="text-align:right;font-weight:700">${fmt(r.vtotal)}</td>
+        <td>${fmtDate(r.fecha)}</td><td>${r.obs||""}</td>
+      </tr>`;
+    });
+    th+=`<tr class="trow">
+      <td colspan="4"></td>
+      <td style="text-align:right">TOTAL PRESUPUESTADO</td>
+      <td style="text-align:right;color:#3aaa35">${fmt(m.total)}</td>
+      <td colspan="2"></td>
+    </tr>`;
+  }
+  th+=`</tbody></table>`;
+  $("p-content").innerHTML=th;
+
+  // Cards resumen
+  $("p-sg").innerHTML=`
+    <div class="psc pcg"><div class="plbl">Monto máx. del fondo</div><div class="pval">$1.000.000</div><div class="psub">CLP</div></div>
+    <div class="psc ${over?'pcr':'pca'}"><div class="plbl">Total presupuestado</div><div class="pval">${fmt(m.total)}</div><div class="psub">CLP</div></div>
+    <div class="psc ${over?'pcr':'pcb'}"><div class="plbl">${over?'⚠ Excedido':'Saldo disponible'}</div><div class="pval">${fmt(Math.abs(saldo))}</div><div class="psub">CLP</div></div>
+    <div class="psc pcp"><div class="plbl">Total bienes tangibles</div><div class="pval">${fmt(m.tangible)}</div><div class="psub">${pct(m.tangible,m.total)} del total</div></div>
+    <div class="psc pct"><div class="plbl">Total alimentación</div><div class="pval">${fmt(m.alim)}</div><div class="psub">${pct(m.alim,m.total)} del total</div></div>`;
+
+  // Reglas
+  const rBudget = over
+    ? `<div class="prule err"><strong>⚠ El presupuesto excede el monto máximo del fondo</strong>El total supera en ${fmt(Math.abs(saldo))} el límite de $1.000.000 CLP financiado por el fondo.</div>`
+    : `<div class="prule ok"><strong>✅ Presupuesto dentro del monto máximo del fondo</strong>Total: ${fmt(m.total)} — Saldo disponible: ${fmt(saldo)}</div>`;
+  const rTang = m.tangOk
+    ? `<div class="prule ok"><strong>✅ Cumple con el mínimo de bienes tangibles (mín. 40%)</strong>Total en bienes tangibles: ${fmt(m.tangible)} (${pct(m.tangible,m.total)} del total presupuestado)</div>`
+    : `<div class="prule ${m.total===0?'warn':'err'}"><strong>⚠ No cumple con el mínimo de bienes tangibles (mín. 40%)</strong>Actual: ${fmt(m.tangible)} (${pct(m.tangible,m.total)}). Mínimo requerido: $400.000 CLP</div>`;
+  const rAlim = m.alimOk
+    ? `<div class="prule ok"><strong>✅ Alimentación no perecible dentro del límite (máx. 15%)</strong>Total alimentación: ${fmt(m.alim)} (${pct(m.alim,m.total)} del total presupuestado)</div>`
+    : `<div class="prule err"><strong>⚠ Alimentación no perecible supera el máximo permitido (máx. 15%)</strong>Actual: ${fmt(m.alim)} (${pct(m.alim,m.total)}). Máximo permitido: $150.000 CLP</div>`;
+  $("p-rules").innerHTML = rBudget + rTang + rAlim;
+
+  $("moverlay").classList.add("open");
+}
+
+function closePreview(){ $("moverlay").classList.remove("open"); }
+function ovClick(e){ if(e.target===$("moverlay")) closePreview(); }
+
+/* ─── Descargar PDF ─── */
+function downloadPDF(){
+  const rows = getRows();
+  const m    = metrics(rows);
+  const saldo= MAX - m.total;
+  const over = m.total > MAX;
+  const now  = new Date().toLocaleDateString("es-CL",{day:"2-digit",month:"long",year:"numeric"});
+  const lider= $("inp-lider").value.trim()||"—";
+  const prj  = $("inp-prj").value.trim()||"—";
+  const org  = $("inp-org").value.trim()||"—";
+
+  let rowsH="";
+  if(!rows.length){
+    rowsH=`<tr><td colspan="8" style="text-align:center;padding:14px;color:#999;font-style:italic">Sin gastos ingresados.</td></tr>`;
+  } else {
+    rows.forEach(r=>{
+      rowsH+=`<tr>
+        <td>${r.n}</td><td>${r.cat||"—"}</td><td>${r.desc||"—"}</td>
+        <td style="text-align:center">${r.cant}</td>
+        <td style="text-align:right">${fmt(r.vunit)}</td>
+        <td style="text-align:right;font-weight:700">${fmt(r.vtotal)}</td>
+        <td>${fmtDate(r.fecha)}</td><td>${r.obs||""}</td>
+      </tr>`;
+    });
+    rowsH+=`<tr style="background:#e8f5e9;font-weight:900">
+      <td colspan="4"></td>
+      <td style="text-align:right">TOTAL PRESUPUESTADO</td>
+      <td style="text-align:right;color:#3aaa35">${fmt(m.total)}</td>
+      <td colspan="2"></td>
+    </tr>`;
+  }
+
+  const bH = over
+    ? `<div style="background:#ffebee;border:2px solid #e8273a;border-radius:7px;padding:9px 13px;color:#b71c1c;font-weight:700;margin-bottom:7px">⚠ El presupuesto excede el monto máximo del fondo en ${fmt(Math.abs(saldo))} CLP.</div>`
+    : `<div style="background:#e8f5e9;border:2px solid #3aaa35;border-radius:7px;padding:9px 13px;color:#2e7d32;font-weight:700;margin-bottom:7px">✅ Presupuesto dentro del límite | Total: ${fmt(m.total)} | Saldo disponible: ${fmt(saldo)}</div>`;
+  const tH = m.tangOk
+    ? `<div style="background:#e8f5e9;border:2px solid #3aaa35;border-radius:7px;padding:9px 13px;color:#2e7d32;font-weight:700;margin-bottom:7px">✅ Bienes tangibles: ${fmt(m.tangible)} (${pct(m.tangible,m.total)}) — Cumple con el mínimo del 40%</div>`
+    : `<div style="background:#fff8e1;border:2px solid #f9a825;border-radius:7px;padding:9px 13px;color:#e65100;font-weight:700;margin-bottom:7px">⚠ Bienes tangibles: ${fmt(m.tangible)} (${pct(m.tangible,m.total)}) — No cumple el mínimo del 40% ($400.000 CLP)</div>`;
+  const aH = m.alimOk
+    ? `<div style="background:#e8f5e9;border:2px solid #3aaa35;border-radius:7px;padding:9px 13px;color:#2e7d32;font-weight:700;margin-bottom:7px">✅ Alimentación no perecible: ${fmt(m.alim)} (${pct(m.alim,m.total)}) — Dentro del máximo del 15%</div>`
+    : `<div style="background:#ffebee;border:2px solid #e8273a;border-radius:7px;padding:9px 13px;color:#b71c1c;font-weight:700;margin-bottom:7px">⚠ Alimentación no perecible: ${fmt(m.alim)} (${pct(m.alim,m.total)}) — Supera el máximo del 15% ($150.000 CLP)</div>`;
+
+  const pw = window.open("","_blank");
+  pw.document.write(`<!DOCTYPE html><html lang="es"><head>
+<meta charset="UTF-8">
+<title>Presupuesto CDI Te Impulsa 2026 – ${prj}</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;900&family=Nunito+Sans:wght@400;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Nunito Sans',sans-serif;font-size:10px;color:#111;padding:24px 28px}
+.hdr{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:12px;border-bottom:3px solid #3aaa35}
+.logo-b{background:linear-gradient(135deg,#6cc04a,#b5e550);border-radius:8px;padding:7px 10px;text-align:center;flex-shrink:0}
+.logo-b .l1{font-family:'Nunito',sans-serif;font-weight:900;font-size:9px;color:#111;line-height:1}
+.logo-b .l2{font-family:'Nunito',sans-serif;font-weight:900;font-size:12px;color:#111;line-height:1.05;font-style:italic}
+.logo-b .l3{font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;color:#111;line-height:1}
+.htxt h1{font-family:'Nunito',sans-serif;font-weight:900;font-size:15px;color:#3aaa35}
+.htxt h2{font-family:'Nunito',sans-serif;font-weight:700;font-size:10.5px;color:#555;margin-top:1px}
+.badge{background:#e8273a;color:white;font-weight:700;font-size:8px;padding:2px 8px;border-radius:99px;margin-left:7px;vertical-align:middle}
+.id-box{background:#f4f6f3;border-radius:6px;padding:9px 12px;margin-bottom:11px;display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+.id-item{font-size:9px}.id-item strong{display:block;font-size:7.5px;text-transform:uppercase;letter-spacing:.05em;color:#9bac97;margin-bottom:1px}
+.meta{display:flex;gap:22px;font-size:8.5px;color:#777;margin-bottom:11px}
+.meta strong{color:#111}
+.cg{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin:11px 0}
+.cb{border:1.5px solid #e0e0e0;border-radius:6px;padding:7px 9px;text-align:center}
+.cb .lbl{font-size:7px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#777;margin-bottom:2px;line-height:1.3}
+.cb .val{font-family:'Nunito',sans-serif;font-weight:900;font-size:11px;line-height:1}
+.cb .sub{font-size:6.5px;font-weight:600;margin-top:2px;opacity:.8}
+.cb-g{border-color:#3aaa35}.cb-g .val,.cb-g .lbl,.cb-g .sub{color:#3aaa35}
+.cb-a{border-color:#f9a825}.cb-a .val,.cb-a .lbl,.cb-a .sub{color:#f57f17}
+.cb-b{border-color:#1565c0}.cb-b .val,.cb-b .lbl,.cb-b .sub{color:#1565c0}
+.cb-r{border-color:#e8273a}.cb-r .val,.cb-r .lbl,.cb-r .sub{color:#b71c1c}
+.cb-p{border-color:#7b1fa2}.cb-p .val,.cb-p .lbl,.cb-p .sub{color:#6a1b9a}
+.bar{background:#3aaa35;color:white;padding:7px 12px;border-radius:6px 6px 0 0;font-family:'Nunito',sans-serif;font-weight:900;font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+table{width:100%;border-collapse:collapse}
+th{background:#3aaa35;color:white;padding:5px 4px;font-family:'Nunito',sans-serif;font-weight:800;font-size:7.5px;text-transform:uppercase;letter-spacing:.04em;text-align:left}
+td{padding:4.5px 4px;border-bottom:1px solid #e6ebe4;font-size:9px;vertical-align:top}
+tr:nth-child(even) td{background:#f4f6f3}
+.note{background:#f3e5f5;border:1.5px solid #7b1fa2;border-radius:6px;padding:8px 12px;font-size:8.5px;color:#4a148c;margin-top:9px;line-height:1.6}
+.note strong{font-family:'Nunito',sans-serif;font-weight:800;display:block;margin-bottom:1px}
+.footer{margin-top:16px;text-align:center;font-size:7.5px;color:#aaa;border-top:1px solid #eee;padding-top:8px}
+</style>
+</head><body>
+<div class="hdr">
+  <div class="logo-b">
+    <div class="l1">CDI Te ✦</div>
+    <div class="l2">Impulsa</div>
+    <div class="l3">2026</div>
+  </div>
+  <div class="htxt">
+    <h1>Presupuesto del Proyecto Social y/o Comunitario <span class="badge">2do Llamado</span></h1>
+    <h2>Fondo CDI Te Impulsa 2026</h2>
+  </div>
+</div>
+<div class="id-box">
+  <div class="id-item"><strong>Líder o lideresa del proyecto</strong>${lider}</div>
+  <div class="id-item"><strong>Nombre del proyecto</strong>${prj}</div>
+  <div class="id-item"><strong>Organización / grupo / comunidad</strong>${org}</div>
+</div>
+<div class="meta">
+  <div><strong>Fecha:</strong> ${now}</div>
+  <div><strong>Ítems presupuestados:</strong> ${rows.length}</div>
+  <div><strong>Fondo:</strong> CDI Te Impulsa 2026</div>
+</div>
+<div class="cg">
+  <div class="cb cb-g"><div class="lbl">Monto máx. del fondo</div><div class="val">$1.000.000</div><div class="sub">CLP</div></div>
+  <div class="cb ${over?'cb-r':'cb-a'}"><div class="lbl">Total presupuestado</div><div class="val">${fmt(m.total)}</div><div class="sub">CLP</div></div>
+  <div class="cb ${over?'cb-r':'cb-b'}"><div class="lbl">${over?'⚠ Excedido':'Saldo disponible'}</div><div class="val">${fmt(Math.abs(saldo))}</div><div class="sub">CLP</div></div>
+  <div class="cb cb-p"><div class="lbl">Bienes tangibles</div><div class="val">${fmt(m.tangible)}</div><div class="sub">${pct(m.tangible,m.total)} del total</div></div>
+  <div class="cb ${m.alimOk?'cb-g':'cb-r'}"><div class="lbl">Alimentación</div><div class="val">${fmt(m.alim)}</div><div class="sub">${pct(m.alim,m.total)} del total</div></div>
+</div>
+<div class="bar">Detalle de gastos del proyecto</div>
+<table>
+  <thead><tr>
+    <th>#</th><th>Categoría</th><th>Descripción</th>
+    <th style="text-align:center">Cant.</th>
+    <th style="text-align:right">Val. Unit.</th>
+    <th style="text-align:right">Val. Total</th>
+    <th>Fecha ejec.</th><th>Observaciones</th>
+  </tr></thead>
+  <tbody>${rowsH}</tbody>
+</table>
+<div style="margin-top:11px">${bH}${tH}${aH}</div>
+<div class="note">
+  <strong>📌 Nota importante:</strong>
+  El Fondo CDI Te Impulsa 2026 financia hasta $1.000.000 CLP por proyecto. Todo excedente por sobre este monto deberá ser cubierto por la persona líder del proyecto.
+</div>
+<div class="footer">CDI Chile · CDI Te Impulsa 2026 · 2do Llamado · Todos los montos en pesos chilenos (CLP) · Generado el ${now}</div>
+</body></html>`);
+  pw.document.close(); pw.focus();
+  setTimeout(()=>{ pw.print(); }, 650);
+}
+
+/* ─── Init ─── */
+window.addEventListener("DOMContentLoaded", ()=>{ addRow(); addRow(); addRow(); });
+</script>
+</body>
+</html>
